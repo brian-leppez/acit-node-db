@@ -11,8 +11,6 @@
 /* eslint-disable no-console, no-shadow */
 
 import app from './app';
-import db from './db';
-import redis from './redis';
 
 const port = process.env.PORT || 8080;
 const host = process.env.HOSTNAME || '0.0.0.0';
@@ -25,7 +23,7 @@ const server = app.listen(port, host, () => {
 // Shutdown Node.js app gracefully
 function handleExit(options, err) {
   if (options.cleanup) {
-    const actions = [server.close, db.destroy, redis.quit];
+    const actions = [server.close];
     actions.forEach((close, i) => {
       try {
         close(() => {
