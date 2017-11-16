@@ -12,12 +12,13 @@
 
 import app from './app';
 
-const port = process.env.PORT || 8080;
-const host = process.env.HOSTNAME || '0.0.0.0';
+import config from './config';
 
 // Launch Node.js server
-const server = app.listen(port, host, () => {
-  console.log(`Node.js API server is listening on http://${host}:${port}/`);
+const server = app.listen(config.port, config.host, () => {
+  console.log(
+    `Node.js API server is listening on http://${config.host}:${config.port}/`,
+  );
 });
 
 // Shutdown Node.js app gracefully

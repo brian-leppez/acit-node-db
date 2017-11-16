@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import PrettyError from 'pretty-error';
-import routes from './routes/routes';
+import router from './routes/router';
 
 const app = express();
 
@@ -44,7 +44,7 @@ app.use(
   }),
 );
 
-app.use(routes);
+app.use(router);
 
 const pe = new PrettyError();
 pe.skipNodeFiles();
