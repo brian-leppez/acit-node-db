@@ -9,7 +9,7 @@ const conversation = new ConversationV1({
   version_date: ConversationV1.VERSION_DATE_2017_05_26,
 });
 
-const message = (text, context) => {
+const message = (text: string, context?: Object): Promise<any> => {
   const payload = {
     workspace_id: config.watson.conversation.workspace,
     input: {
