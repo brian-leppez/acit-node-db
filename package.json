@@ -56,6 +56,7 @@
     "test-watch": "node --no-warnings node_modules/.bin/jest --watch",
     "build": "node tools/build.js",
     "build-watch": "node tools/build.js --watch",
+    "debug": "node --inspect=0.0.0.0:9229  tools/run.js",
     "start": "node tools/run.js"
   }
 }

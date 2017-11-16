@@ -35,8 +35,7 @@ module.exports = task(
         if (
           path.basename(src)[0] === '.' ||
           src.includes('__tests__') ||
-          src.endsWith('.test.js') ||
-          src.endsWith('.cc')
+          src.endsWith('.test.js')
         ) {
           return;
         }
