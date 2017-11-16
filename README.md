@@ -1,17 +1,17 @@
-# Node.js Starter Kit for ACIT
+# NodeJS starter kit for ACIT
 
+---
 
-
-This project was bootstraped with [Node.js API Starter Kit][nodejskit] ([support][gitter]).
-
-<p align="center"><a href="https://graphql-demo.kriasoft.com"><img src="http://koistya.github.io/files/nodejs-api-starter-demo.png" width="600" alt="GraphQL Demo" /><br><sup>https://graphql-demo.kriasoft.com</sup></a></p>
-
-
+This project was bootstraped with NodeJS API Starter Kit
 ## Prerequisites
 
+* [Docker][docker] Community Edition v17 or higher
 * [VS Code][code] editor (preferred) + [Project Snippets][vcsnippets],
   [EditorConfig][vceditconfig], [ESLint][vceslint], [Flow][vcflow], and [Prettier][vcprettier]
   plug-ins.
+
+
+
 
 For the full list of automation scripts available in this project, please refer to "scripts"
 section in the [`package.json`](./package.json) file and the [`tools`](./tools) folder.
