@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   const response = await message('Hello');
   const { output: { text } } = response;
   const stringifiedOutput = text.join('. ');
-  res.send({ message: stringifiedOutput });
+  res.send(stringifiedOutput);
 });
 
 export default router;

@@ -2,13 +2,12 @@
 /* eslint-disable no-console, no-shadow */
 
 import app from './app';
-
 import config from './config';
 
 // Launch Node.js server
 const server = app.listen(config.port, config.host, () => {
   console.log(
-    `Node.js API server is listening on http://${config.host}:${config.port}/`,
+    `Node.js server is listening on http://${config.host}:${config.port}/`,
   );
 });
 
