@@ -14,9 +14,7 @@ router.get('/', async (req, res) => {
     const { output: { text } } = response;
     stringifiedOutput = text.join('. ');
   } catch (e) {
-    stringifiedOutput = `There was an error getting a response from the conversation service! ${
-      e.message
-    }`;
+    stringifiedOutput = `There was an error getting a response from the conversation service! ${e.message}`;
   }
   res.send(stringifiedOutput);
 });
