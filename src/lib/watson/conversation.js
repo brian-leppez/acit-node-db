@@ -1,5 +1,6 @@
 /* @flow */
 
+// test comment
 import ConversationV1 from 'watson-developer-cloud/conversation/v1';
 import config from '../../config';
 
