@@ -1,16 +1,17 @@
 /* @flow */
 
 import { Router } from 'express';
-import message from '../lib/watson/conversation';
+import Conversation from '../lib/watson/conversation';
 
 const router = new Router();
+const conversation = new Conversation();
 
 // Register your routes here.
 
 router.get('/', async (req, res) => {
   let stringifiedOutput = '';
   try {
-    const response = await message('Hello');
+    const response = await conversation.message('Hello');
     const { output: { text } } = response;
     stringifiedOutput = text.join('. ');
   } catch (e) {
