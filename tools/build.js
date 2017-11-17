@@ -19,10 +19,7 @@ module.exports = task(
       let ready = false;
 
       // Clean up the output directory
-      del.sync(
-        ['build/**', '!build', '!build/Release', '!build/Release/*.node'],
-        { dot: true },
-      );
+      del.sync(['build/**', '!build'], { dot: true });
 
       let watcher = chokidar.watch(['src', 'package.json'], {});
       watcher.on('all', (event, src) => {
