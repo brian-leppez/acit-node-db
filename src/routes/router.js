@@ -9,14 +9,17 @@ const router = new Router();
 // Register your routes here.
 //
 router.get('/', async (req, res) => {
+  let stringifiedOutput = '';
   try {
     const response = await message('Hello');
     const { output: { text } } = response;
-    const stringifiedOutput = text.join('. ');
-    res.send(stringifiedOutput);
+    stringifiedOutput = text.join('. ');
   } catch (e) {
-    res.send("There was an error getting a response from the conversation service! " + e.message);
+    stringifiedOutput = `There was an error getting a response from the conversation service! ${
+      e.message
+    }`;
   }
+  res.send(stringifiedOutput);
 });
 
 export default router;
