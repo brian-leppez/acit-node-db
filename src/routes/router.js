@@ -9,9 +9,9 @@ const conversation = new Conversation();
 // Register your routes here.
 
 router.get('/', async (req, res) => {
-  let stringifiedOutput = '';
+  let stringifiedOutput: string = '';
   try {
-    const response = await conversation.message('Hello');
+    const response: Object = await conversation.message('Hello');
     const { output: { text } } = response;
     stringifiedOutput = text.join('. ');
   } catch (e) {
