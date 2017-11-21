@@ -41,8 +41,7 @@
     "prettier": "^1.7.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js",
-    "testEnvironment": "node"
+    "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
   },
   "eslintConfig": {
     "env": {
@@ -50,22 +49,17 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add --force"
-    ],
-    "*.{json}": [
-      "prettier --parser json --write",
-      "git add --force"
-    ]
+    "*.js": ["eslint --fix", "git add --force"],
+    "*.{json}": ["prettier --parser json --write", "git add --force"]
   },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
+    "fix":
+      "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
     "test": "jest",
-    "test-watch": "node --watch",
+    "test-watch": "jest --watch",
     "build": "node tools/build.js",
     "build-watch": "node tools/build.js --watch",
     "debug": "node --inspect=0.0.0.0:9229  tools/run.js",
