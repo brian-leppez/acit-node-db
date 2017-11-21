@@ -1,0 +1,34 @@
+const fs = require('fs');
+const path = require('path');
+const winston = require('winston');
+
+const logDirectory = 'log';
+const logFilename = path.resolve(__dirname, `${logDirectory}/-logfile.log`);
+const timestampFormat = () => new Date().toLocaleTimeString();
+const prettyprintFormat = obj => JSON.stringify(obj, null, 2);
+
+if (!fs.existsSync(logDirectory)) {
+  fs.mkdirSync(logDirectory);
+}
+
+const logger = new winston.Logger({
+  transports: [
+    new winston.transports.Console({
+      timestamp: timestampFormat,
+      colorize: true,
+      level: 'debug',
+      prettyPrint: prettyprintFormat,
+    }),
+    new (require('winston-daily-rotate-file'))({
+      filename: logFilename,
+      timestamp: timestampFormat,
+      datePattern: 'yyyy-MM-dd',
+      prepend: true,
+      level: 'debug',
+      json: false,
+      prettyprint: prettyprintFormat,
+    }),
+  ],
+});
+
+export default logger;
