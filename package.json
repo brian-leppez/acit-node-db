@@ -12,7 +12,9 @@
     "jest": "^21.2.0",
     "pretty-error": "^2.1.1",
     "source-map-support": "^0.4.18",
-    "watson-developer-cloud": "^2.40.0"
+    "watson-developer-cloud": "^2.40.0",
+    "winston": "^2.4.0",
+    "winston-daily-rotate-file": "^1.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
