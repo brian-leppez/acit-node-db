@@ -1,9 +1,9 @@
 /* @flow */
 /* eslint-env jest */
 
-// const conversation = require('../../../src/lib/watson/conversation.js');
+import Conversation from '../../../src/lib/watson/conversation';
 
-test('confirm we get 200 response from Watson', () => {
-  // expect(conversation.message('Hello'));
-  expect(1).toBe(1); // test script
-});
+const conversation = new Conversation();
+
+test('confirm we get a response from Watson', () =>
+  expect(conversation.message('Hello')).resolves.toBeDefined());
