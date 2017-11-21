@@ -16,8 +16,9 @@ describe('smoke test', () =>
 
 describe('unit test', () =>
   test('validate output structure from Watson', () => {
-    expect.assertions(5);
+    expect.assertions(6);
     return conversation.message('').then(response => {
+      expect(response).toBeType('object');
       expect(response.context).toBeType('object');
       expect(response.output).toBeType('object');
       expect(response.output.text).toBeType('array');
