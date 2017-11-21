@@ -50,14 +50,19 @@
     }
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add --force"],
-    "*.{json}": ["prettier --parser json --write", "git add --force"]
+    "*.js": [
+      "eslint --fix",
+      "git add --force"
+    ],
+    "*.{json}": [
+      "prettier --parser json --write",
+      "git add --force"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix":
-      "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
+    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
     "test": "jest",
     "test-watch": "node --watch",

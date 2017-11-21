@@ -29,6 +29,21 @@ class Conversation {
       }),
     );
   };
+  static getWorkspace = () => {
+    const params = {
+      workspace_id: config.watson.conversation.workspace,
+      export: true,
+    };
+    return new Promise((resolve, reject) =>
+      conversationSDK.getWorkspace(params, (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      }),
+    );
+  };
 }
 
 export default Conversation;
