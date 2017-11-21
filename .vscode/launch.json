@@ -12,9 +12,18 @@
       "protocol": "inspector",
       "sourceMaps": true,
       "localRoot": "${workspaceRoot}",
-      "outFiles": [
-        "${workspaceFolder}/{build}/**/*.js.map"
-      ]
+      "outFiles": ["${workspaceFolder}/{build}/**/*.js.map"]
+    },
+
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+      "args": ["-i"],
+
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceRoot}/dist/**/*"]
     }
   ]
 }
