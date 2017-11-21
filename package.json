@@ -36,11 +36,18 @@
     "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.55.0",
     "husky": "^0.14.3",
+    "jest-cli": "^21.2.1",
     "lint-staged": "^4.2.3",
     "prettier": "^1.7.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js",
+    "testEnvironment": "node"
+  },
+  "eslintConfig": {
+    "env": {
+      "jest": true
+    }
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add --force"],
@@ -52,8 +59,8 @@
     "fix":
       "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
-    "test": "node --no-warnings node_modules/.bin/jest",
-    "test-watch": "node --no-warnings node_modules/.bin/jest --watch",
+    "test": "jest",
+    "test-watch": "node --watch",
     "build": "node tools/build.js",
     "build-watch": "node tools/build.js --watch",
     "debug": "node --inspect=0.0.0.0:9229  tools/run.js",
