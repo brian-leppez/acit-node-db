@@ -2,6 +2,7 @@
 
 import { Router } from 'express';
 import Conversation from '../lib/watson/conversation';
+import logger from '../../tools/logger';
 
 const router = new Router();
 const conversation = new Conversation();
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
     const { output: { text1 } } = response;
     stringifiedOutput = text1.join('. ');
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     stringifiedOutput = `There was an error getting a response from the conversation service!`;
   }
   res.send(stringifiedOutput);

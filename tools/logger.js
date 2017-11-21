@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const winston = require('winston');
 
-const logDirectory = 'log';
-const logFilename = path.resolve(__dirname, `${logDirectory}/-logfile.log`);
+const logDirectory = '../logs';
+const logFilename = path.resolve(logDirectory, `${logDirectory}/-logfile.log`);
 const timestampFormat = () => new Date().toLocaleTimeString();
 const prettyprintFormat = obj => JSON.stringify(obj, null, 2);
 
@@ -31,4 +31,4 @@ const logger = new winston.Logger({
   ],
 });
 
-export default logger;
+module.exports = logger;

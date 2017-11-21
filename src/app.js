@@ -49,6 +49,7 @@ app.use(router);
 const pe = new PrettyError();
 pe.skipNodeFiles();
 pe.skipPackage('express');
+pe.withoutColors();
 pe.start();
 
 app.use((err, req, res, next) => {
