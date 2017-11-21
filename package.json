@@ -43,11 +43,6 @@
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
   },
-  "eslintConfig": {
-    "env": {
-      "jest": true
-    }
-  },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add --force"],
     "*.{json}": ["prettier --parser json --write", "git add --force"]
