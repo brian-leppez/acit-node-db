@@ -5,7 +5,7 @@ import app from './app';
 import config from './config';
 
 // Launch Node.js server
-const server = app.listen(config.port, () => {
+const server = app.listen(8080, () => {
   console.log(
     `Node.js server is listening on http://${config.host}:${config.port}/`,
   );
