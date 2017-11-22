@@ -8,7 +8,7 @@ import config from './config';
 // const appEnv = cfenv.getAppEnv();
 
 // Launch Node.js server
-const server = app.listen(config.port, config.host, () => {
+const server = app.listen(8080, () => {
   console.log(
     `Node.js server is listening on http://${config.host}:${config.port}/`,
   );

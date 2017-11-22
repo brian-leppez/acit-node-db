@@ -32,7 +32,7 @@ try {
   build = require('./build');
 } catch (err) {
   if (err.code !== 'MODULE_NOT_FOUND') throw err;
-  cp.spawnSync('npm', ['install', '--no-progress'], { stdio: 'inherit' });
+  cp.spawnSync('yarn', ['install', '--no-progress'], { stdio: 'inherit' });
 
   // Clear Module's internal cache
   try {
