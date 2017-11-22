@@ -1,16 +1,16 @@
 /* @flow */
 /* eslint-disable no-console, no-shadow */
 
-// import cfenv from 'cfenv';
+import cfenv from 'cfenv';
 import app from './app';
-import config from './config';
+// import config from './config';
 
-// const appEnv = cfenv.getAppEnv();
+const appEnv = cfenv.getAppEnv();
 
 // Launch Node.js server
-const server = app.listen(8080, () => {
+const server = app.listen(appEnv.port, appEnv.bind, () => {
   console.log(
-    `Node.js server is listening on http://${config.host}:${config.port}/`,
+    `Node.js server is listening on http://${appEnv.bind}:${appEnv.port}/`,
   );
 });
 
