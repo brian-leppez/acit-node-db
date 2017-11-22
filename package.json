@@ -2,6 +2,9 @@
   "name": "api",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=8.2.0"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cfenv": "^1.0.4",
@@ -49,19 +52,14 @@
     "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add --force"
-    ],
-    "*.{json}": [
-      "prettier --parser json --write",
-      "git add --force"
-    ]
+    "*.js": ["eslint --fix", "git add --force"],
+    "*.{json}": ["prettier --parser json --write", "git add --force"]
   },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
+    "fix":
+      "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
     "test": "jest",
     "test-watch": "jest --watch",
