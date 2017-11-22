@@ -8,13 +8,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "cfenv": "^1.0.4",
-    "chokidar": "^1.7.0",
     "compression": "^1.7.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.15.5",
     "express-session": "^1.15.6",
-    "del": "3.0.0",
     "jest": "^21.2.0",
     "pretty-error": "^2.1.1",
     "source-map-support": "^0.4.18",
@@ -35,6 +33,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.2.0",
     "babel-register": "^6.26.0",
+    "chokidar": "^1.7.0",
+    "del": "3.0.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.1",
     "eslint-config-prettier": "^2.6.0",
@@ -52,19 +52,14 @@
     "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add --force"
-    ],
-    "*.{json}": [
-      "prettier --parser json --write",
-      "git add --force"
-    ]
+    "*.js": ["eslint --fix", "git add --force"],
+    "*.{json}": ["prettier --parser json --write", "git add --force"]
   },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
+    "fix":
+      "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
     "test": "jest",
     "test-watch": "jest --watch",
