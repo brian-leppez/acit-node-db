@@ -72,10 +72,10 @@ function spawnServer() {
       '--no-lazy',
       // Enable "hot reload", it only works when debugger is off
       ...(isDebug
-        ? ['../src/server.js']
+        ? ['./server.js']
         : [
             '--eval',
-            'process.stdin.on("data", data => { if (data.toString() === "load") require("../src/server.js"); });',
+            'process.stdin.on("data", data => { if (data.toString() === "load") require("./server.js"); });',
           ]),
     ],
     { cwd: './build', stdio: ['pipe', 'inherit', 'inherit'], timeout: 3000 },
