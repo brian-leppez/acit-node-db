@@ -5,7 +5,7 @@ build
 node_modules
 npm-debug.log
 yarn-error.log
-log
+logs
 
 # Editors and IDEs
 .vscode/*
