@@ -1,6 +1,6 @@
 module.exports = {
   // Node.js app
-  port: process.env.PORT || 8080,
+  port: process.env.PORT || 3000,
   host: process.env.VCAP_APP_HOST || 'localhost',
 
   watson: {
