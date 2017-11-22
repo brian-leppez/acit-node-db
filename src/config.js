@@ -1,7 +1,7 @@
 module.exports = {
   // Node.js app
   port: process.env.PORT || 3000,
-  host: process.env.HOST || 'localhost',
+  host: process.env.VCAP_APP_HOST || 'localhost',
 
   watson: {
     conversation: {
