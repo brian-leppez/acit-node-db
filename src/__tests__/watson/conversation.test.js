@@ -76,7 +76,7 @@ describe('integration test', () => {
   });
 });
 
-describe('unit test', () =>
+describe('unit test', () => {
   test('validate output structure from Watson', () => {
     expect.assertions(6);
     return conversation.message('').then(response => {
@@ -87,22 +87,5 @@ describe('unit test', () =>
       expect(response.intents).toBeType('array');
       expect(response.entities).toBeType('array');
     });
-  }));
-
-const expectedJSON =
-  '{"intents":[{"intent":"greetings","confidence":1}],"entities":[],"input":{"text":"Hello"},"output":{"text":["Hi. It looks like a nice drive today. What would you like me to do?  "],"nodes_visited":["Start And Initialize Context"],"log_messages":[]},"context":{"conversation_id":"5ef23542-053f-41f0-ac25-1f62447bc3f1","system":{"dialog_stack":[{"dialog_node":"root"}],"dialog_turn_counter":1,"dialog_request_counter":1,"_node_output_map":{"Start And Initialize Context":[0,0]},"branch_exited":true,"branch_exited_reason":"completed"},"AConoff":"off","lightonoff":"off","musiconoff":"off","appl_action":"","heateronoff":"off","volumeonoff":"off","wipersonoff":"off","default_counter":0}}';
-
-describe('integration test', () => {
-  test('confirm Watson JSON properties matches saved JSONs properties', async () => {
-    expect.assertions(1);
-    const actualJSON = await conversation.message('Hello');
-    const actualKeys = [];
-    const expectedKeys = [];
-    getAllNestedKeysTypesAndLength(actualJSON, actualKeys).sort();
-    getAllNestedKeysTypesAndLength(
-      JSON.parse(expectedJSON),
-      expectedKeys,
-    ).sort();
-    expect(actualKeys).toEqual(expectedKeys);
   });
 });
