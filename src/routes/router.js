@@ -9,7 +9,7 @@ const conversation = new Conversation();
 
 // Register your routes here.
 
-router.get('/', async (req, res) => {
+async function beginConversation(req, res) {
   let stringifiedOutput: string = '';
   try {
     const response: Object = await conversation.message('Hello');
@@ -20,6 +20,8 @@ router.get('/', async (req, res) => {
     stringifiedOutput = `There was an error getting a response from the conversation service!`;
   }
   res.send(stringifiedOutput);
-});
+}
+
+router.get('/', beginConversation);
 
 export default router;
