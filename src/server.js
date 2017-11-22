@@ -2,13 +2,13 @@
 /* eslint-disable no-console, no-shadow */
 
 import app from './app';
-import config from './config';
+// import config from './config';
 
 // Launch Node.js server
-const server = app.listen(config.port, config.host, () => {
-  console.log(
-    `Node.js server is listening on http://${config.host}:${config.port}/`,
-  );
+const port = process.env.PORT;
+const host = process.env.VCAP_APP_HOST;
+const server = app.listen(port, host, () => {
+  console.log(`Node.js server is listening on http://${host}:${port}/`);
 });
 
 // Shutdown Node.js app gracefully
