@@ -5,9 +5,8 @@ import SpeechToTextV1 from 'watson-developer-cloud/speech-to-text/v1';
 import config from '../../config';
 
 const speechToTextSDK = new SpeechToTextV1({
-  username: config.watson.discovery.username,
-  password: config.watson.discovery.password,
-  version_date: config.watson.discovery.version_date,
+  username: config.watson.speech_to_text.username,
+  password: config.watson.speech_to_text.password,
 });
 
 class SpeechToText {
@@ -21,7 +20,7 @@ class SpeechToText {
     keywordsThreshold?: number,
     maxAlternatives?: number,
     wordAlternativesThreshold?: number,
-    wordConfidence?: number,
+    wordConfidence?: boolean,
     timestamps?: boolean,
     profanityFilter?: boolean,
     smartFormatting?: boolean,
