@@ -39,10 +39,12 @@ describe('unit test', () => {
 });
 
 describe('unit test', () => {
-  test('validate collection output structure from Watson', () =>
-    Discovery.getCollections().then(response => {
+  test('validate collection output structure from Watson', () => {
+    expect.assertions(3);
+    return Discovery.getCollections().then(response => {
       expect(response).toBeType('object');
       expect(response.collections).toBeType('array');
       expect(response.collections[0]).toBeType('object');
-    }));
+    });
+  });
 });
