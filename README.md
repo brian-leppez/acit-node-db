@@ -7,6 +7,7 @@ section in the [`package.json`](./package.json) file and the [`tools`](./tools) 
 
 ## Technology Stack
 
+* Web Framework: [Express](https://expressjs.com/)
 * Node Transpiler: [Babel](https://babeljs.io/)
 * Type-checking: [Flow](https://flow.org/)
 * Code Linting: [ESLint](https://eslint.org/)
@@ -70,6 +71,7 @@ Each deploy will come in 3 stages: Build, Test and Deploy. For more information 
 
 ## Reference Articles and Tutorials
 
+*[Working with Delivery Pipelines](https://console.bluemix.net/docs/services/ContinuousDelivery/pipeline_working.html#pipeline-working)
 * [Stop using JWT for sesstions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)
   ([part 2](http://cryto.net/~joepie91/blog/2016/06/19/stop-using-jwt-for-sessions-part-2-why-your-solution-doesnt-work/))
   by [Sven Slootweg](https://github.com/joepie91)
