@@ -1,8 +1,11 @@
 module.exports = {
-  // Node.js app
+  // Server values
   port: process.env.PORT || 3000,
-  host: process.env.HOST || 'localhost',
+  host: process.env.VCAP_APP_HOST || 'localhost',
 
+  // App values
+
+  // Watson values
   watson: {
     conversation: {
       username:

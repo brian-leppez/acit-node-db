@@ -23,8 +23,8 @@ module.exports = task(
 
       let watcher = chokidar.watch(['src', 'package.json'], {});
       watcher.on('all', (event, src) => {
-        // Reload the app if package.json or yarn.lock files have changed (in watch mode)
-        if (src === 'package.json' || src === 'yarn.lock') {
+        // Reload the app if package.json (in watch mode)
+        if (src === 'package.json' || src === 'package.lock.json') {
           if (ready && onComplete) delay100ms(onComplete);
           return;
         }
