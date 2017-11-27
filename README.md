@@ -3,29 +3,32 @@
 For the full list of automation scripts available in this project, please refer to "scripts"
 section in the [`package.json`](./package.json) file and the [`tools`](./tools) folder.
 
-## This project was forked and based on Kriasoft's NodeJS API Starter Project
+## This project was forked and based on Kriasoft's [NodeJS API Starter Project](https://github.com/kriasoft/nodejs-api-starter)
 
 ## Technology Stack
 
-Node Transpiler: [Babel](https://babeljs.io/)
-Type-checking: [Flow](https://flow.org/)
-Code Linting: [ESLint](https://eslint.org/)
-Code Formatter: [Prettier](https://github.com/prettier/prettier)
-Logger: [Winston](https://github.com/winstonjs/winston)
-Error Formatting: [Pretty Error](https://github.com/AriaMinaei/pretty-error)
+* Node Transpiler: [Babel](https://babeljs.io/)
+* Type-checking: [Flow](https://flow.org/)
+* Code Linting: [ESLint](https://eslint.org/)
+* Code Formatter: [Prettier](https://github.com/prettier/prettier)
+* Logger: [Winston](https://github.com/winstonjs/winston)
+* Error Formatting: [Pretty Error](https://github.com/AriaMinaei/pretty-error)
 
 ## Prerequisites 
 
-Node 8.9.1 or above [Download here](https://nodejs.org/en/download/)
-npm 5.5.1 or above (comes with Node install)
-Highly recommended: [Visual Studio Code](https://code.visualstudio.com/) Extensions: EditorConfig, ESLint, Flow and Prettier.
+1) Node 8.9.1 or above [Download here](https://nodejs.org/en/download/)
+2) npm 5.5.1 or above (comes with Node install)
+3) Highly recommended: [Visual Studio Code](https://code.visualstudio.com/) Extensions: EditorConfig, ESLint, Flow and Prettier.
 
 ## Getting started
 Clone this project and host the code either on Github or IBM's Git repository
 
 To get started, install dependecies.
+
 `npm install` 
+
 To build the project and launch a development server with hot reload.
+
 `npm run dev`
 
 The NodeJS server will be listening on https://localhost:3000
@@ -47,6 +50,7 @@ For more information visit http://facebook.github.io/jest/
 In order to run the app with V8 inspector enabled, simply run the server in debug mode `npm run debug` and use Visual Studio Code's debugger to attach to the running process.
 
 ## Deploying to IBM cloud
+
 The best way to deploy the project is to build a DevOps toolchain with the ['Build your own toolchain' template](https://console.bluemix.net/devops/create). Add the Repo tool to your toolchain so that it knows where you code is stored and add a 'Delivery Pipeline' integration tool.
 
 #### Delivery Pipeline
@@ -63,11 +67,6 @@ Each deploy will come in 3 stages: Build, Test and Deploy. For more information 
 2) Test. It runs Jest and performs all unit, integration and smoke tests.
 
 3) Deploy. Deploys app to IBM Cloud.
-
-
-
-
-
 
 ## Reference Articles and Tutorials
 
