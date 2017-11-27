@@ -13,7 +13,9 @@ section in the [`package.json`](./package.json) file and the [`tools`](./tools) 
 * Code Linting: [ESLint](https://eslint.org/)
 * Code Formatter: [Prettier](https://github.com/prettier/prettier)
 * Logger: [Winston](https://github.com/winstonjs/winston)
-* Error Formatting: [Pretty Error](https://github.com/AriaMinaei/pretty-error)
+* Error Formatting: [Pretty Error]
+(https://github.com/AriaMinaei/pretty-error)
+* Git hooks: [Husky](https://github.com/typicode/husky)
 
 ## Prerequisites 
 
