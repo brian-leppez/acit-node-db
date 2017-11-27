@@ -14,7 +14,7 @@ class Discovery {
     query: string,
     filter?: string = '',
     aggregation?: string = '',
-    count?: string = '10',
+    count?: number = 10,
     returnFilter?: string = '',
   ): Promise<any> => {
     const payload = {

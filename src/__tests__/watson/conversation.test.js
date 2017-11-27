@@ -53,9 +53,9 @@ function getAllNestedKeysTypesAndLength(obj, keys) {
 
 // Global variables for testing
 describe('smoke test', () => {
-  test('confirm we get a response from Watson', () => {
+  test('confirm we get a response from Watson', async () => {
     expect.assertions(1);
-    return expect(conversation.message('')).resolves.toBeDefined();
+    await expect(conversation.message('')).resolves.toBeDefined();
   });
 });
 
@@ -77,16 +77,15 @@ describe('integration test', () => {
 });
 
 describe('unit test', () => {
-  test('validate output structure from Watson', () => {
+  test('validate output structure from Watson', async () => {
     expect.assertions(6);
-    return conversation.message('').then(response => {
-      expect(response).toBeType('object');
-      expect(response.context).toBeType('object');
-      expect(response.output).toBeType('object');
-      expect(response.output.text).toBeType('array');
-      expect(response.intents).toBeType('array');
-      expect(response.entities).toBeType('array');
-    });
+    const response: Object = await conversation.message('');
+    expect(response).toBeType('object');
+    expect(response.context).toBeType('object');
+    expect(response.output).toBeType('object');
+    expect(response.output.text).toBeType('array');
+    expect(response.intents).toBeType('array');
+    expect(response.entities).toBeType('array');
   });
 
   // test('2 to equal 3', () => {
