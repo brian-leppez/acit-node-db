@@ -26,11 +26,10 @@ describe('smoke test', () => {
 
 describe('unit test', () => {
   test('validate output structure from Watson', () => {
-    expect.assertions(7);
+    expect.assertions(6);
     return discovery.query('').then(response => {
       expect(response).toBeType('object');
-      expect(response.matching_results).toBeType('string');
-      expect(response.passages).toBeType('array');
+      expect(response.matching_results).toBeType('number');
       expect(response.results).toBeType('array');
       expect(response.results[0]).toBeType('object');
       expect(response.results[0].result_metadata).toBeType('object');

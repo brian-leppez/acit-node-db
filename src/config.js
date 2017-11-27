@@ -23,6 +23,7 @@ module.exports = {
         'https://gateway.watsonplatform.net/discovery/api',
       collection: process.env.WATSON_DISCOVERY_COLLECTION || 'news',
       environment: process.env.WATSON_DISCOVERY_ENVIRONMENT || 'system',
+      version_date: process.env.WATSON_DISCOVERY_VERSION_DATE || '2017-11-07',
     },
   },
 };

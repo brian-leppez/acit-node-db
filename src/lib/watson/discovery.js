@@ -1,12 +1,12 @@
 /* @flow */
 
-import DiscoveryV1 from 'watson-developer-cloud/conversation/v1';
+import DiscoveryV1 from 'watson-developer-cloud/discovery/v1';
 import config from '../../config';
 
 const discoverySDK = new DiscoveryV1({
   username: config.watson.discovery.username,
   password: config.watson.discovery.password,
-  version_date: DiscoveryV1.VERSION_DATE_2017_11_07,
+  version_date: config.watson.discovery.version_date,
 });
 
 class Discovery {
