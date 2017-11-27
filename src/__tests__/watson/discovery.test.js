@@ -25,7 +25,7 @@ describe('smoke test', () => {
 });
 
 describe('unit test', () => {
-  test('validate output structure from Watson', () => {
+  test('validate query output structure from Watson', () => {
     expect.assertions(6);
     return discovery.query('').then(response => {
       expect(response).toBeType('object');
@@ -36,4 +36,13 @@ describe('unit test', () => {
       expect(response.results[0].text).toBeType('string');
     });
   });
+});
+
+describe('unit test', () => {
+  test('validate collection output structure from Watson', () =>
+    Discovery.getCollections().then(response => {
+      expect(response).toBeType('object');
+      expect(response.collections).toBeType('array');
+      expect(response.collections[0]).toBeType('object');
+    }));
 });
