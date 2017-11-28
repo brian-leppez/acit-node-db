@@ -12,6 +12,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.5",
     "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
     "jest": "^21.2.0",
     "pretty-error": "^2.1.1",
     "source-map-support": "^0.4.18",
@@ -51,14 +52,19 @@
     "setupTestFrameworkScriptFile": "<rootDir>/tools/jest.setup.js"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add --force"],
-    "*.{json}": ["prettier --parser json --write", "git add --force"]
+    "*.js": [
+      "eslint --fix",
+      "git add --force"
+    ],
+    "*.{json}": [
+      "prettier --parser json --write",
+      "git add --force"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix":
-      "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
+    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "check": "flow check",
     "test": "jest",
     "test-watch": "jest --watch",

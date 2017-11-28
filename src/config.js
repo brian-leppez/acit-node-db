@@ -28,5 +28,14 @@ module.exports = {
       environment: process.env.WATSON_DISCOVERY_ENVIRONMENT || 'system',
       version_date: process.env.WATSON_DISCOVERY_VERSION_DATE || '2017-11-07',
     },
+    speech_to_text: {
+      username:
+        process.env.WATSON_STT_USERNAME ||
+        '6bab02f2-03f9-4bad-9372-2237ee75144c',
+      password: process.env.WATSON_STT_PASSWORD || '2aDXJaOlNMuf',
+      url:
+        process.env.WATSON_STT_URL ||
+        'https://stream.watsonplatform.net/speech-to-text/api',
+    },
   },
 };
