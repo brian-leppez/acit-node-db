@@ -14,6 +14,8 @@
     "express-session": "^1.15.6",
     "fs": "0.0.1-security",
     "jest": "^21.2.0",
+    "loopback-connector-dashdb": "^2.0.2",
+    "loopback-datasource-juggler": "^3.12.0",
     "pretty-error": "^2.1.1",
     "source-map-support": "^0.4.18",
     "watson-developer-cloud": "^2.40.0",

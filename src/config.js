@@ -38,4 +38,16 @@ module.exports = {
         'https://stream.watsonplatform.net/speech-to-text/api',
     },
   },
+  // DATABASE VALUES
+  database: {
+    dashdb: {
+      username: process.env.DATABASE_DASHDB_USERNAME || 'bluadmin',
+      password: process.env.DATABASE_DASHDB_PASSWORD || 'MWQ1YzYwZGI2Nzll',
+      hostname:
+        process.env.DATABASE_DASHDB_HOSTNAME ||
+        'dashdb-txn-flex-yp-dal09-255.services.dal.bluemix.net',
+      port: process.env.DATABASE_DASHDB_PORT || 50000,
+      database: process.env.DATABASE_DASHDB_DATABASE || 'BLUDB',
+    },
+  },
 };
